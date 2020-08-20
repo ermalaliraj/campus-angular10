@@ -1,0 +1,26 @@
+<div data-ng-controller="Shell as vm">
+    <div id="splash-page" *ngIf="showSplash" >
+        <div class="page-splash">
+            <div class="page-splash-message">
+                Angular10 example
+            </div>
+        </div>
+    </div>
+    <header class="clearfix">
+        <topnav-component></topnav-component>
+    </header>
+    <section id="content" class="content">
+        <sidebar-component></sidebar-component>
+
+        <div data-ng-view class="shuffle-animation"></div>
+
+        <div ngplus-overlay
+             ngplus-overlay-delay-in="50"
+             ngplus-overlay-delay-out="700"
+             ngplus-overlay-animation="dissolve-animation">
+
+            <img src="./app/content/images/busy.gif"/>
+            <div class="page-spinner-message overlay-message">{{busyMessage}}</div>
+        </div>
+    </section>
+</div>
