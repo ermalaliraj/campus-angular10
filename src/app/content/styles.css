@@ -181,8 +181,8 @@ small {
 }
 
 .input-group[class*="col-"] {
-    width: 80%;
-    margin: 0 1.5em;
+    /*width: 80%;*/
+    /*margin: 0 1.5em;*/
 }
 
 .user .user-pic {

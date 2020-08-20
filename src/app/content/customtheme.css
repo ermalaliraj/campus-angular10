@@ -733,7 +733,7 @@ form label {
 /* Sidebar widget */
 
 .sidebar .sidebar-widget {
-    padding: 10px 20px 10px 0;
+    padding: 30px 5px 10px;
 }
 
 .sidebar .ui-datepicker {
