@@ -11,18 +11,23 @@ import {ToasterModule, ToasterService} from "angular2-toaster";
 import {LoggerService} from "./util/logger/logger.service";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import {DashboardModule} from "./dashboard/dashboard.module";
+import {DashboardComponent} from "./dashboard/dashboard.component";
+
 @NgModule({
     imports: [
         // NgbModule,
         BrowserModule,
         CoreModule
         , LayoutModule
+        , DashboardModule
         , ToasterModule
         , BrowserAnimationsModule//if you use toasterService in AppComponent
     ],
     declarations: [ShellComponent
         , TopNavComponent
         , SidebarComponent
+        , DashboardComponent
         , AppComponent],
     providers: [LoggerService, ToasterService],
     bootstrap: [AppComponent]
