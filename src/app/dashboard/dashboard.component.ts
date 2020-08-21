@@ -18,17 +18,16 @@ export class DashboardComponent {
     courses = {};
     news = {};
 
-    courseCount = 0;
-    topicCount = 0;
+    coursesCount = 0;
+    topicsCount = 0;
     studentsCount = 0;
-    trackCounts = 0;
 
     activate() {
         this.setBasicData();
         this.getStudentsCount(),
-        this.getTopicCount(),
+        this.getTopicsCount(),
         this.getTopics(),
-        this.getTrackCounts()
+        this.getCoursesCount()
     }
 
     setBasicData() {
@@ -60,13 +59,13 @@ export class DashboardComponent {
     }
 
     getStudentsCount() {
-        this.studentsCount = 4;
+        this.studentsCount = 7;
     }
-    getTopicCount() {
-        this.topicCount = 1;
+    getTopicsCount() {
+        this.topicsCount = 4;
     }
-    getTrackCounts() {
-        this.trackCounts = 5;
+    getCoursesCount() {
+        this.coursesCount = 3;
     }
     getTopics() {
         return {};
