@@ -5,10 +5,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <ul class="today-datas">
-
                         <li class="bgreen"><a href="#/students">
                             <div class="pull-left"><i class="fa fa-group"></i></div>
-                            <div class="datas-text pull-right"><span class="bold">{{studentsCount}}</span> Students
+                            <div class="datas-text pull-right"><span class="bold">{{getStudentsCount}}</span> Students
                             </div>
                             <div class="clearfix"></div>
                         </a>
@@ -16,7 +15,7 @@
 
                         <li class="borange"><a href="#/topics">
                             <div class="pull-left"><i class="fa fa-pencil-square-o"></i></div>
-                            <div class="datas-text pull-right"><span class="bold">{{topicsCount}}</span> Topics
+                            <div class="datas-text pull-right"><span class="bold">{{getTopicsCount}}</span> Topics
                             </div>
                             <div class="clearfix"></div>
                         </a>
@@ -24,7 +23,7 @@
 
                         <li class="bviolet"><a href="#/courses">
                             <div class="pull-left"><i class="fa fa-calendar"></i></div>
-                            <div class="datas-text pull-right"><span class="bold">{{coursesCount}}</span> Courses
+                            <div class="datas-text pull-right"><span class="bold">{{getCoursesCount}}</span> Courses
                             </div>
                             <div class="clearfix"></div>
                         </a>
@@ -34,10 +33,10 @@
             </div>
 
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-2" *ngFor="let cluster of clusters">
                     <div class="widget wlightblue">
                         <div class="widget-head">
-                            Front-End
+                            {{cluster.name}}
                         </div>
                         <div>
                             <table class="table table-bordered">
@@ -47,168 +46,11 @@
                                     <th>IP</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <tr>
-                                    <td>angularjs-cluster01</td>
-                                    <td>10.0.0.1</td>
-                                </tr>
-                                <tr>
-                                    <td>angularjs-cluster02</td>
-                                    <td>10.0.0.2</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div class="widget wlightblue">
-                        <div class="widget-head">
-                            Eureka
-                        </div>
-                        <div>
-                            <table class="table table-bordered">
-                                <thead>
-                                <tr>
-                                    <th>Server Name</th>
-                                    <th>IP</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>eureka-cluster01</td>
-                                    <td>10.0.10.1</td>
-                                </tr>
-                                <tr>
-                                    <td>eureka-cluster02</td>
-                                    <td>10.0.10.2</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div class="widget wlightblue">
-                        <div class="widget-head">
-                            Microservice
-                        </div>
-                        <div>
-                            <table class="table table-bordered">
-                                <thead>
-                                <tr>
-                                    <th>Server Name</th>
-                                    <th>IP</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>ms-students-01</td>
-                                    <td>10.0.20.1</td>
-                                </tr>
-                                <tr>
-                                    <td>ms-students-02</td>
-                                    <td>10.0.20.2</td>
-                                </tr>
-                                <tr>
-                                    <td>ms-students-01</td>
-                                    <td>10.0.30.1</td>
-                                </tr>
-                                <tr>
-                                    <td>ms-students-02</td>
-                                    <td>10.0.30.2</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div class="widget wlightblue">
-                        <div class="widget-head">
-                            DB
-                        </div>
-                        <div>
-                            <table class="table table-bordered">
-                                <thead>
-                                <tr>
-                                    <th>Server Name</th>
-                                    <th>IP</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>oracle-01</td>
-                                    <td>10.0.50.1</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div class="widget wlightblue">
-                        <div class="widget-head">
-                            Mocked Env
-                        </div>
-                        <div>
-                            <table class="table table-bordered">
-                                <thead>
-                                <tr>
-                                    <th>Server Name</th>
-                                    <th>IP</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>nodered</td>
-                                    <td>10.0.60.1</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div class="widget wlightblue">
-                        <div class="widget-head">
-                            Admin Tools
-                        </div>
-                        <div class="widget-content">
-                            <div style="padding-bottom: 10px;">
-                                <table class="table table-bordered">
-                                    <thead>
+                                <tbody  *ngFor="let server of cluster.servers">
                                     <tr>
-                                        <th>Server Name</th>
-                                        <th>IP</th>
+                                        <td>{{server.name}}</td>
+                                        <td>{{server.ip}}</td>
                                     </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>eureka-admin</td>
-                                        <td>10.0.100.2</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <table class="table table-bordered">
-                                <thead>
-                                <tr>
-                                    <th>Server Name</th>
-                                    <th>IP</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>springboot-admin</td>
-                                    <td>10.0.100.2</td>
-                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -220,10 +62,10 @@
                 <div class="col-md-12">
                     <div class="widget wlightblue">
                         <div class="widget-head">
-                            {{news}}
+                            {{news.title}}
                         </div>
                         <div class="widget-content text-center text-info">
-                            <small>{{news}}</small>
+                            <small>{{news.description}}</small>
                         </div>
                         <div class="widget-foot">
                             <div class="clearfix"></div>

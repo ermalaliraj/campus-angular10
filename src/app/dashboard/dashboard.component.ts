@@ -1,73 +1,36 @@
-import {Component} from '@angular/core';
-import {Location} from "@angular/common";
-import {DashboardService} from "./dashboard.service";
+import {Component, OnInit} from '@angular/core';
+import {Cluster, DashboardService} from "./dashboard.service";
 
 @Component({
     selector: 'dashboard-component',
     templateUrl: './dashboard.html'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
 
-    constructor(){
-        // dashboardService.activate();
-        this.activate();
+    clusters: Cluster[];
+
+    constructor(private dashboardService: DashboardService) {}
+
+    ngOnInit(): void {
+        this.clusters = this.dashboardService.getClusters();
     }
 
-    students = {};
-    topics = {};
-    courses = {};
-    news = {};
-
-    coursesCount = 0;
-    topicsCount = 0;
-    studentsCount = 0;
-
-    activate() {
-        this.setBasicData();
-        this.getStudentsCount(),
-        this.getTopicsCount(),
-        this.getTopics(),
-        this.getCoursesCount()
+    get getStudentsCount() {
+        return "7";
     }
 
-    setBasicData() {
-        this.students = {
-            title: 'Top students'
-        };
-        this.topics = {
-            interval: 5000,
-            list: [],
-            title: 'Most ranked topics'
-        };
-        this.courses = {
-            predicate: '',
-            reverse: false,
-            setSort: this.setCoursesSort,
-            title: 'Most followed courses',
-            tracks: []
-        };
-        this.news = {
+    get getTopicsCount() {
+        return 4;
+    }
+
+    get getCoursesCount() {
+        return 3;
+    }
+
+    get news() {
+        return {
             title: 'Campus Angular JS',
-            description: 'Campus Angular JS ' +
-            'is a demo project '
+            description: 'Campus Angular JS is a demo project'
         };
-    }
-
-    setCoursesSort(prop) {
-        // this.courses.predicate = prop;
-        // this.courses.reverse = !vm.courses.reverse;
-    }
-
-    getStudentsCount() {
-        this.studentsCount = 7;
-    }
-    getTopicsCount() {
-        this.topicsCount = 4;
-    }
-    getCoursesCount() {
-        this.coursesCount = 3;
-    }
-    getTopics() {
-        return {};
     }
 }
