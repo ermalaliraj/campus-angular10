@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ToasterService} from "angular2-toaster";
 import {ExceptionModule} from '../util/exception/exception.module';
 import {LoggerModule} from '../util/logger/logger.module';
@@ -10,7 +10,7 @@ import {LoggerService} from "../util/logger/logger.service";
 
 @NgModule({
     imports: [
-        NgbModule,
+        // NgbModule,
         // RoutingModule,
         ExceptionModule,
         LoggerModule
