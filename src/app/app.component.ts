@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {BodyOutputType, ToasterConfig, ToasterService} from "angular2-toaster";
+import {Title} from "@angular/platform-browser";
 
 
 @Component({
@@ -9,9 +10,8 @@ import {BodyOutputType, ToasterConfig, ToasterService} from "angular2-toaster";
 })
 
 export class AppComponent {
-    title = 'campus-angular10';
 
-    constructor(private toasterService: ToasterService) {
+    constructor(private toasterService: ToasterService, private titleService: Title) {
         this.toasterService = toasterService;
     }
 
@@ -29,5 +29,7 @@ export class AppComponent {
         toast.body = "new html body <i>italic</i><hr/>notes";
         toast.type = "error";
         toast.timeout = 20;
+
+        this.titleService.setTitle( 'campus-angular10' );
     }
 }

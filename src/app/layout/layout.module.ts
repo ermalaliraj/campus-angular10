@@ -4,7 +4,6 @@ import {LoggerService} from "../util/logger/logger.service";
 
 @NgModule({
     imports: [],
-    // declarations: [ShellComponent, SidebarComponent, TopNavComponent],
     providers: [LoggerService, CommonService]
 })
 

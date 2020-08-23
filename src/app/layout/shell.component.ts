@@ -20,7 +20,6 @@ export class ShellComponent implements OnInit {
     }
 
     activate() {
-        console.info("activeee");
         // this.logger.success('CodeCamper loaded!', null, null);
 //            TODO: Using a resolver on all routes or datacontext.ready in every controller
 //            return datacontext.ready([]).then(hideSplash);
