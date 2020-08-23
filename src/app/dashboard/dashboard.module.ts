@@ -3,7 +3,6 @@ import {CommonService} from "../core/common.service";
 
 @NgModule({
     imports: [],
-    // declarations: [ShellComponent, SidebarComponent, TopNavComponent],
     providers: [CommonService]
 })
 

@@ -1,23 +1,25 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {Router} from "@angular/router";
+import {ToasterModule, ToasterService} from "angular2-toaster";
+
+import {RoutingModule} from './util/router/routing.module';
 import {CoreModule} from "./core/core.module";
 import {AppComponent} from "./app.component";
 import {LayoutModule} from "./layout/layout.module";
 import {SidebarComponent} from "./layout/sidebar.component";
 import {ShellComponent} from "./layout/shell.component";
 import {TopNavComponent} from "./layout/topnav.component";
-import {ToasterModule, ToasterService} from "angular2-toaster";
 import {LoggerService} from "./util/logger/logger.service";
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DashboardComponent} from "./dashboard/dashboard.component";
 
 import {DashboardModule} from "./dashboard/dashboard.module";
-import {DashboardComponent} from "./dashboard/dashboard.component";
 
 @NgModule({
     imports: [
-        // NgbModule,
         BrowserModule,
+        RoutingModule,
         CoreModule
         , LayoutModule
         , DashboardModule
@@ -33,4 +35,11 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
     bootstrap: [AppComponent]
 })
 export class AppModule {
+
+    // Diagnostic only: inspect router configuration
+    constructor(router: Router) {
+        // Use a custom replacer to display function names in the route configs
+        const replacer = (key, value) => (typeof value === 'function') ? value.name : value;
+        console.log('Routes: ', JSON.stringify(router.config, replacer, 2));
+    }
 }

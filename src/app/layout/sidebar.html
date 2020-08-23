@@ -17,10 +17,9 @@
             </div>
 
             <ul class="navi">
-                <div class="nlightblue" *ngFor='let r of navRoutes;'>
-                    <!--<a href="#{{r.originalPath}}" data-ng-bind-html="r.settings.content"></a>-->
-                    <!--<a href="#{{r}}">{{r}}</a>-->
-                </div>
+                <li class="nlightblue" *ngFor='let r of routes;'>
+                    <a routerLink="{{r.path}}" routerLinkActive="active">{{r.data.title}}</a>
+                </li>
 
                 <li class="nlightblue">
                     <a href="" data-ng-click="clearStorage()">
