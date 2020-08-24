@@ -15,6 +15,9 @@ import {LoggerService} from "./util/logger/logger.service";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 
 import {DashboardModule} from "./dashboard/dashboard.module";
+import {CommonService} from "./core/common.service";
+import {StudentModule} from "./student/student.module";
+import {StudentComponent} from "./student/student.component";
 
 @NgModule({
     imports: [
@@ -23,6 +26,7 @@ import {DashboardModule} from "./dashboard/dashboard.module";
         CoreModule
         , LayoutModule
         , DashboardModule
+        , StudentModule
         , ToasterModule
         , BrowserAnimationsModule//if you use toasterService in AppComponent
     ],
@@ -30,8 +34,9 @@ import {DashboardModule} from "./dashboard/dashboard.module";
         , TopNavComponent
         , SidebarComponent
         , DashboardComponent
+        , StudentComponent
         , AppComponent],
-    providers: [LoggerService, ToasterService],
+    providers: [CommonService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

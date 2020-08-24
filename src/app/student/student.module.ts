@@ -5,5 +5,5 @@ import {NgModule} from '@angular/core';
     providers: []
 })
 
-export class DashboardModule {
+export class StudentModule{
 }

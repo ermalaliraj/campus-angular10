@@ -2,11 +2,12 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {RouteHelperService} from "./routehelper.service";
 import {DashboardComponent} from "../../dashboard/dashboard.component";
-import {AppComponent} from "../../app.component";
+import {StudentComponent} from "../../student/student.component";
 
 const routes: Routes = [
     // {path: '', pathMatch : 'full', component: AppComponent},
-    {path: 'dashboard-component', component: DashboardComponent,  data: {title: 'Dashboard'} }
+    {path: 'dashboard-component', component: DashboardComponent,  data: {title: 'Dashboard'} },
+    {path: 'student-component', component: StudentComponent,  data: {title: 'Students'} }
     // {path: '**', redirectTo: '/not-found'}
 ];
 
