@@ -14,6 +14,9 @@ export class Paging {
     public setStudentCount(studentsCount) {
         this.studentsCount = studentsCount;
     }
+    public setCurrentPage(newPageNr) {
+        this.currentPage = newPageNr;
+    }
 
     get getStudentCount() {
         return this.studentsCount;
@@ -55,5 +58,9 @@ export class StudentComponent implements OnInit {
 
     getStudentsCount() {
         return this.paging.getStudentCount;
+    }
+
+    pageChanged(newPage){
+        this.paging.setCurrentPage(newPage);
     }
 }

@@ -28,6 +28,7 @@
     "font-awesome": "^4.7.0",
     "ng-animate": "^0.3.4",
     "ng2-overlay": "^0.7.2",
+    "ngx-pagination": "^5.0.0",
     "npm-check-updates": "^7.0.2",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",

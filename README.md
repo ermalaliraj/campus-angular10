@@ -42,6 +42,7 @@ npm install @fortawesome/angular-fontawesome@0.7.x
 * [campus-angularjs](https://github.com/ermalaliraj/campus-angularjs) AngularJS version
 
 
+npm install ngx-pagination --save
 
 
 

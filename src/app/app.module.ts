@@ -18,6 +18,7 @@ import {CommonService} from "./core/common.service";
 import {StudentModule} from "./student/student.module";
 import {StudentComponent} from "./student/student.component";
 import {StudentRowComponent} from "./student/student-row.component";
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
     imports: [
@@ -28,6 +29,7 @@ import {StudentRowComponent} from "./student/student-row.component";
         , DashboardModule
         , StudentModule
         , ToasterModule
+        , NgxPaginationModule
         , BrowserAnimationsModule//if you use toasterService in AppComponent
     ],
     declarations: [ShellComponent

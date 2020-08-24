@@ -27,22 +27,24 @@
 
                     <div class="widget-content user">
                         <div>
-                            <!--<pagination boundary-links="true"-->
-                                        <!--ng-change="pageChanged()"-->
-                                        <!--total-items="studentsCount"-->
-                                        <!--items-per-page="paging.pageSize"-->
-                                        <!--ng-model="paging.currentPage"-->
-                                        <!--max-size="paging.maxPagesToShow"-->
-                                        <!--class="pagination-small"-->
-                                        <!--previous-text="Prev"-->
-                                        <!--next-text="Next"-->
-                                        <!--first-text="First"-->
-                                        <!--last-text="Last"></pagination>-->
-                            <!--<div class="clearfix"></div>-->
+                            <pagination-controls  id="studentsListId"
+                                                  (pageChange)="pageChanged($event)"
+                                                  (pageBoundsCorrection)="pageChanged($event)"
+                                                  [maxSize]="paging.maxPagesToShow"
+                                                  directionLinks="true"
+                                                  autoHide="true"
+                                                  responsive="true"
+                                                  previousLabel="Previous"
+                                                  nextLabel="Next"
+                                                  screenReaderPaginationLabel="Pagination"
+                                                  screenReaderPageLabel="page"
+                                                  screenReaderCurrentLabel="You're on page">
+                            </pagination-controls>
                         </div>
 
                         <div class="widget-content user">
-                            <div class="padd" *ngFor='let s of students;'>
+                            <div class="padd" *ngFor="let s of students
+                                           | paginate: {itemsPerPage: paging.pageSize, currentPage: paging.currentPage, id: 'studentsListId'}" >
                                 <student-row [student]="s"></student-row>
                             </div>
                         </div>
