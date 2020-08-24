@@ -11,13 +11,13 @@ import {LayoutModule} from "./layout/layout.module";
 import {SidebarComponent} from "./layout/sidebar.component";
 import {ShellComponent} from "./layout/shell.component";
 import {TopNavComponent} from "./layout/topnav.component";
-import {LoggerService} from "./util/logger/logger.service";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 
 import {DashboardModule} from "./dashboard/dashboard.module";
 import {CommonService} from "./core/common.service";
 import {StudentModule} from "./student/student.module";
 import {StudentComponent} from "./student/student.component";
+import {StudentRowComponent} from "./student/student-row.component";
 
 @NgModule({
     imports: [
@@ -35,6 +35,7 @@ import {StudentComponent} from "./student/student.component";
         , SidebarComponent
         , DashboardComponent
         , StudentComponent
+        , StudentRowComponent
         , AppComponent],
     providers: [CommonService],
     bootstrap: [AppComponent]

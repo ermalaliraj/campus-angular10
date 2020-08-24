@@ -21,8 +21,7 @@
                     <div class="widget-head"
                          subtitle=""
                          right-text="">
-                        <!--<div class="left-title">{{title}} {{students.length}} / {{paging.studentsCount}}</div>-->
-                        <div class="left-title">{{title}} {{students}} / {{paging.studentsCount}}</div>
+                        <div class="left-title">{{title}} {{students.length}} / {{paging.studentsCount}}</div>
                         <div class="right-title">Page {{paging.currentPage}} of {{paging.pageCount}}</div>
                     </div>
 
@@ -44,8 +43,7 @@
 
                         <div class="widget-content user">
                             <div class="padd" *ngFor='let s of students;'>
-                                <!--<img-person student="s"/>-->
-                                {{s}}
+                                <student-row [student]="s"></student-row>
                             </div>
                         </div>
                     </div>

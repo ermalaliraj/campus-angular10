@@ -26,7 +26,7 @@ export const keyCodes = {
 };
 
 export const imageSettings = {
-    imageBasePath: 'content/images/photos/',
+    imageBasePath: 'app/content/images/photos/',
     unknownPersonImageSource: 'unknown_person.jpg'
 };
 
